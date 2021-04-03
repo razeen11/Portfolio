@@ -253,6 +253,9 @@ img{
     z-index: 1;
     transition: 0.1s;
   }
+  .projects .content .probx img:hover{
+    border: 5px solid black;
+  }
   .projects .content .probx:hover .tooltiptext {
     visibility: visible;
   }
