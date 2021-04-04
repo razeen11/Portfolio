@@ -229,13 +229,21 @@
             form.reset();
             status.classList.add("success");
             status.innerHTML = "Thank You! We will respond asap";
+            window.setTimeout(rel2,3000);
         }
 
         function error() {
             status.classList.add("error");
             status.innerHTML = "Oops! There was a problem.";
+            window.setTimeout(rel1,3000);
         }
-
+        function rel1(){
+            status.classList.remove("error");
+        }
+        function rel2(){
+            status.classList.remove("success");
+        }
+        
         form.addEventListener("submit", function (ev) {
             ev.preventDefault();
             var data = new FormData(form);
