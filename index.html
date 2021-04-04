@@ -177,14 +177,14 @@
                 </div>
             </div>
             <div class="formbx">
-                <form action="mail.php" method="post">
+                <form action="https://formspree.io/f/xyylykbj" method="post" id="my-form">
                     <h3>Message Me</h3>
-                    <input type="text" name="name" placeholder="Full Name">
-                    <input type="email" name="email" placeholder="Email">
-                    <textarea name="message" placeholder="Your Message"></textarea>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
                     <button type="submit" class="btn1">SEND</button>
                     <br>
-
+                    <div id="status"></div>
                 </form>
             </div>
         </div>
@@ -203,6 +203,8 @@
     <div class="copyright" style="color:gray;">
         <p>Copyright © 2021 RZsWORLD. All Rights Reserved.</p>
     </div>
+
+    
     <script type="text/javascript">
         window.addEventListener('scroll', function(){
             var header = document.querySelector('header');
@@ -214,6 +216,46 @@
             var menu = document.querySelector('.menu');
             menutoggle.classList.toggle('active');
             menu.classList.toggle('active');
+        }
+    </script>
+
+    <script type="text/javascript">
+        window.addEventListener("DOMContentLoaded", function () {
+
+        var form = document.getElementById("my-form");
+        var status = document.getElementById("status");
+
+        function success() {
+            form.reset();
+            status.classList.add("success");
+            status.innerHTML = "Thank You! We will respond asap";
+        }
+
+        function error() {
+            status.classList.add("error");
+            status.innerHTML = "Oops! There was a problem.";
+        }
+
+        form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            var data = new FormData(form);
+            ajax(form.method, form.action, data, success, error);
+        });
+        });
+
+        function ajax(method, url, data, success, error) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+            } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+            }
+        };
+        xhr.send(data);
         }
     </script>
 </body>

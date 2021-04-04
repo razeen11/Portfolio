@@ -88,6 +88,10 @@ section
     letter-spacing: 2px;
     font-weight: 500;
 }
+.btn1:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
 
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -338,6 +342,23 @@ img{
     color: #2196f3;
     margin-bottom: 0;
 }
+#status {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  #status.success {
+    background-color: rgb(211, 250, 153);
+    animation: status 4s ease forwards;
+  }
+  #status.error {
+    background-color: rgb(250, 129, 92);
+    color: white;
+    animation: status 4s ease forwards;
+  }
 .social{
     background: #000;
     color: gray;
