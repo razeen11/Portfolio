@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 </head>
+
 <body>
     <header>
         <a href="#000" class="logo">RZsWORLD</a>
@@ -28,8 +28,9 @@
     </header>
     <section class="banner" id="000">
         <div class="textBx">
-            <h2>Hello, I'm <br><span>Razeen</span></h2>
-            <h3> - an aspiring IT professional.</h3>
+            <h2>Hello, World!<br><span>I am Razeen</span></h2>
+            <h3><span class="text-slider-items text-slider"></span>
+            </h3>
             <a href="#001" class="btn">About</a>
         </div>
     </section>
@@ -53,8 +54,8 @@
                     Feel free to contact me, if you wish to work with me or even if you want my contribution in your projects. 
                     <br>
                     <br>
-                    mail to: razeeniqbal11@gmail.com <br>
-                    ph: 9487312098 <br>
+                    mail: razeeniqbal11@gmail.com <br>
+                    phone: 9487312098 <br>
                     <a href="./resume/18CSR159 resume.pdf" class="btn2" target="_blank">RESUME</a>
                 </p>
             </div>
@@ -123,19 +124,27 @@
                 <span class="tooltiptext"><b>A simple portfolio template</b></span>
             </div>
             <div class="probx">
-                <a href="D:\github\portfolio\info\info.html" target="_blank"><img src="./img/online-recruitment.png"></a>
-                <span class="tooltiptext"><b>SRS - Smart Recruitment System</b><br>(under development)</span>
+                <img src="./img/online-recruitment.png" id="myBtn">
+                <span class="tooltiptext"><b>SRS - Smart Recruitment System</b></span>
             </div>
             <div class="probx">
-                <a href="D:\github\portfolio\info\info.html" target="_blank"><img src="./img/presentation.png"></a>
-                <span class="tooltiptext"> <b>MAANAAKKAR - Student Activity Management System</b><br>(under development)</span>
+                <img src="./img/presentation.png" id="myBtn1">
+                <span class="tooltiptext"> <b>MAANAAKKAR - Student Activity Management System</b></span>
             </div>
             <div class="probx">
-                <a href="D:\github\portfolio\info\info.html" target="_blank"><img src="./img/har1.png"></a>
-                <span class="tooltiptext"> <b>Human Activity Recognition and Predeiction</b><br>(under development)</span>
+                <img src="./img/har1.png" id="myBtn2">
+                <span class="tooltiptext"> <b>Human Activity Recognition and Predeiction</b></span>
             </div>
         </div>
     </section>
+
+    <!-- dialog box -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Project under Development</p>
+          </div>
+      </div>
 
     <section class="contact" id="004">
         <div class="heading white">
@@ -189,22 +198,26 @@
             </div>
         </div>
     </section>
+
     <div class="social">
         <a href="https://www.linkedin.com/in/razeen-i-761b291a4/" target="_blank"><i class="fa fa-linkedin"></i></a>
         &nbsp;&nbsp;&nbsp;
         <a href="https://wa.me/+919487312098" target="_blank"><i class="fa fa-whatsapp"></i></a>
         &nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/razeen.i11" target="_blank"><i class="fa fa-instagram"></i></a>
+        &nbsp;&nbsp;&nbsp;
         <a href="https://www.facebook.com/razeen.iqbal.5" target="_blank"><i class="fa fa-facebook-official"></i></a> 
         &nbsp;&nbsp;&nbsp;
         <a href="https://twitter.com/imrazeen" target="_blank"><i class="fa fa-twitter"></i></a> 
-        &nbsp;&nbsp;&nbsp;
-        <a href="https://www.instagram.com/razeen.i11" target="_blank"><i class="fa fa-instagram"></i></a>
     </div>
     <div class="copyright" style="color:gray;">
         <p>Copyright © 2021 RZsWORLD. All Rights Reserved.</p>
     </div>
 
-    
+
+    <!-- SCRIPTS -->
+
+    <!-- Script to make header menus sticky while scrolling-->
     <script type="text/javascript">
         window.addEventListener('scroll', function(){
             var header = document.querySelector('header');
@@ -219,6 +232,7 @@
         }
     </script>
 
+    <!-- script for message form submission -->
     <script type="text/javascript">
         window.addEventListener("DOMContentLoaded", function () {
 
@@ -266,5 +280,66 @@
         xhr.send(data);
         }
     </script>
+
+    <!-- Script for Dialog window (Project under Development)-->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        var btn1 = document.getElementById("myBtn1");
+        var btn2 = document.getElementById("myBtn2");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        btn1.onclick = function() {
+          modal.style.display = "block";
+        }
+        btn2.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        //ESC key to close
+        window.onkeydown = function( event ) {
+            if ( event.keyCode == 27 ) {
+                modal.style.display = "none";
+            }
+        };
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+        
+        <!-- Scripts for slider text-->
+        <script src="./typed.js-master/lib/typed.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            if (($(".text-slider").length == 1)) {
+                var typed_strings = "an aspiring IT professional, ML enthusiast, Creative Web designer, Proficient Programmer"
+                var typed = new Typed(".text-slider", {
+                    strings: typed_strings.split(", "),
+                    typeSpeed: 50,
+                    loop: true,
+                    backDelay: 1000,
+                    backSpeed: 25,
+                });
+            }
+        </script>
+        
 </body>
 </html>
