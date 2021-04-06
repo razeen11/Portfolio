@@ -16,7 +16,7 @@ section
 .banner{
     position: relative;
     min-height: 100vh;
-    background: url(../img/rz.png);
+    background: url(../img/l4.png);
     background-size: cover;
     background-position: right;
     display: flex;
@@ -88,10 +88,15 @@ section
     text-decoration: none;
     letter-spacing: 2px;
     font-weight: 500;
+    border: none;
+    outline: none;
 }
 .btn1:hover{
-    opacity: 0.9;
+    opacity: 0.8;
     cursor: pointer;
+}
+.btn1:active{
+    opacity: 0.6;
 }
 
 .tooltip .tooltiptext {
@@ -454,7 +459,6 @@ img{
 .social{
     background: #000;
     color: gray;
-    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -469,7 +473,8 @@ img{
     background: #000;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding-top: 3px;
+    font-size: small;
 }
 
 /* responsive */
