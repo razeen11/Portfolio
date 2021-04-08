@@ -166,24 +166,18 @@ header.sticky .logo:before{
     height: 100%;
     color: goldenrod;
     overflow: hidden;
-    animation: animate 6s infinite;
+    animation: animate 4s infinite;
 }
 
 @keyframes animate {
     0% {
-    width: 2%;
-    }
-    25% {
-    width: 50%;
+    width: 0%;
     }
     50% {
     width: 100%;
     }
-    75% {
-    width: 40%;
-    }
     100% {
-    width: 2%;
+        width: 0%;
     }
 }
 
